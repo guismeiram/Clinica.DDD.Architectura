@@ -17,8 +17,4 @@
     <ProjectReference Include="..\..\..\2 - Domain\Clinica.DDD.Architectura.Domain\Clinica.DDD.Architectura.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Mappings\" />
-  </ItemGroup>
-
 </Project>
