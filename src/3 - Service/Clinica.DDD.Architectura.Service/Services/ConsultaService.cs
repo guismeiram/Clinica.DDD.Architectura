@@ -36,7 +36,7 @@ namespace Clinica.DDD.Architectura.Service.Services
             return outputModel;
         }
 
-        public void Delete(int id) => _repository.Delete(id);
+        public void Delete(string id) => _repository.Delete(id);
 
         public IEnumerable<TOutputModel> Get<TOutputModel>() where TOutputModel : class
         {
@@ -47,7 +47,7 @@ namespace Clinica.DDD.Architectura.Service.Services
             return outputModels;
         }
 
-        public TOutputModel GetById<TOutputModel>(int id) where TOutputModel : class
+        public TOutputModel GetById<TOutputModel>(string id) where TOutputModel : class
         {
             var entity = _repository.Select(id);
 

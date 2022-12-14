@@ -6,8 +6,29 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.10" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.9" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="6.0.9" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.9" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.9" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.9" />
+
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.4.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.4.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\3 - Service\Clinica.DDD.Architectura.Service\Clinica.DDD.Architectura.Service.csproj" />
+	  <ProjectReference Include="..\..\4 - Infra\4.1 - Data\Clinica.DDD.Architectura.Infra.Data\Clinica.DDD.Architectura.Infra.Data.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="V2\" />
+	</ItemGroup>
 
 </Project>

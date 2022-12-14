@@ -15,11 +15,11 @@ namespace Clinica.DDD.Architectura.Domain.Interfaces
             where TInputModel : class
             where TOutputModel : class;
 
-        void Delete(int id);
+        void Delete(string id);
 
         IEnumerable<TOutputModel> Get<TOutputModel>() where TOutputModel : class;
 
-        TOutputModel GetById<TOutputModel>(int id) where TOutputModel : class;
+        TOutputModel GetById<TOutputModel>(string id) where TOutputModel : class;
 
         TOutputModel Update<TInputModel, TOutputModel, TValidator>(TInputModel inputModel)
             where TValidator : AbstractValidator<TEntity>

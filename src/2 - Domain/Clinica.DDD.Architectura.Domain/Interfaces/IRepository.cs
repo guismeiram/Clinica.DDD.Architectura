@@ -13,10 +13,10 @@ namespace Clinica.DDD.Architectura.Domain.Interfaces
 
         void Update(TEntity obj);
 
-        void Delete(int id);
+        void Delete(string id);
 
         IList<TEntity> Select();
 
-        TEntity Select(int id);
+        TEntity Select(string id);
     }
 }

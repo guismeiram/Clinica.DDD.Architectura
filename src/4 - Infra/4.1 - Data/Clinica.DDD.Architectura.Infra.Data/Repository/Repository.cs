@@ -30,16 +30,16 @@ namespace Clinica.DDD.Architectura.Infra.Data.Repository
             _db.SaveChanges();
         }
 
-        public void Delete(int id)
+        public void Delete(string id)
         {
-            _db.Set<TEntity>().Remove(Select(id));
+            _db.Remove(id);
             _db.SaveChanges();
         }
 
         public IList<TEntity> Select() =>
             _db.Set<TEntity>().ToList();
 
-        public TEntity Select(int id) =>
+        public TEntity Select(string id) =>
             _db.Set<TEntity>().Find(id);
 
     }
