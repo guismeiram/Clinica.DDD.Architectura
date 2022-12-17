@@ -1,16 +1,22 @@
 ﻿using Clinica.DDD.Core.DomainObjects;
-using Clinica.DDD.Domain.Interfaces.Services;
+using Clinica.DDD.Domain.Interfaces.Repository;
+using Clinica.DDD.Infra.Context;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Clinica.DDD.Domain.Services
+namespace Clinica.DDD.Infra.Repositories
 {
-    public class ServiceBase<TEntity> : IServiceBase<TEntity> where TEntity : Entity, new()
+    public class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : Entity, new()
     {
         protected readonly ClinicaDbContext Db;
         protected readonly DbSet<TEntity> DbSet;
 
-        protected ServiceBase(ClinicaDbContext db)
+        protected RepositoryBase(ClinicaDbContext db)
         {
             Db = db;
             DbSet = db.Set<TEntity>();

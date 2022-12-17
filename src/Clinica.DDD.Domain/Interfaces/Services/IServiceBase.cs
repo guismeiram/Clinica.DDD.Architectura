@@ -1,18 +1,21 @@
-﻿using System;
+﻿using Clinica.DDD.Core.DomainObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Clinica.DDD.Domain.Interfaces.Services
 {
-    public interface IServiceBase<TEntity> where TEntity : class
+    public interface IServiceBase<TEntity> : IDisposable where TEntity : Entity
     {
-        void Add(TEntity obj);
-        TEntity GetById(int id);
-        IEnumerable<TEntity> GetAll();
-        void Update(TEntity obj);
-        void Remove(TEntity obj);
-        void Dispose();
+        Task Adicionar(TEntity entity);
+        Task<List<TEntity>> ObterTodos();
+        Task<TEntity> ObterPorId(string id);
+        Task Atualizar(TEntity entity);
+        Task Remover(String id);
+        Task<IEnumerable<TEntity>> Buscar(Expression<Func<TEntity, bool>> predicate);
+        Task<int> SaveChanges();
     }
 }
