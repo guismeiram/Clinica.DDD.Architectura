@@ -15,15 +15,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{22CD9997
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{6C43C076-2993-4BF9-AFB6-AEA3B171A5C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clinica.DDD.Api", "src\Clinica.DDD.Api\Clinica.DDD.Api.csproj", "{B71EC320-C9E6-476A-BD38-20A852236AD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clinica.DDD.Api", "src\Clinica.DDD.Api\Clinica.DDD.Api.csproj", "{B71EC320-C9E6-476A-BD38-20A852236AD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clinica.DDD.Application", "src\Clinica.DDD.Application\Clinica.DDD.Application.csproj", "{FEA13526-8607-4659-8D6F-CD338D50C372}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clinica.DDD.Application", "src\Clinica.DDD.Application\Clinica.DDD.Application.csproj", "{FEA13526-8607-4659-8D6F-CD338D50C372}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clinica.DDD.Core", "src\Clinica.DDD.Core\Clinica.DDD.Core.csproj", "{0EC3B22C-1242-4309-AD2E-FE3015FBAE68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clinica.DDD.Core", "src\Clinica.DDD.Core\Clinica.DDD.Core.csproj", "{0EC3B22C-1242-4309-AD2E-FE3015FBAE68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clinica.DDD.Domain", "src\Clinica.DDD.Domain\Clinica.DDD.Domain.csproj", "{9E984AF6-F345-48D1-837F-4CF649E24796}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clinica.DDD.Domain", "src\Clinica.DDD.Domain\Clinica.DDD.Domain.csproj", "{9E984AF6-F345-48D1-837F-4CF649E24796}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clinica.DDD.Infra", "src\Clinica.DDD.Infra\Clinica.DDD.Infra.csproj", "{5748484F-8F88-4F89-8ACB-BDF35CA883D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clinica.DDD.Infra", "src\Clinica.DDD.Infra\Clinica.DDD.Infra.csproj", "{214BE11F-D9C9-4711-97FD-2A50058B37EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +47,10 @@ Global
 		{9E984AF6-F345-48D1-837F-4CF649E24796}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E984AF6-F345-48D1-837F-4CF649E24796}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E984AF6-F345-48D1-837F-4CF649E24796}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5748484F-8F88-4F89-8ACB-BDF35CA883D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5748484F-8F88-4F89-8ACB-BDF35CA883D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5748484F-8F88-4F89-8ACB-BDF35CA883D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5748484F-8F88-4F89-8ACB-BDF35CA883D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{214BE11F-D9C9-4711-97FD-2A50058B37EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{214BE11F-D9C9-4711-97FD-2A50058B37EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{214BE11F-D9C9-4711-97FD-2A50058B37EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{214BE11F-D9C9-4711-97FD-2A50058B37EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,7 +65,7 @@ Global
 		{FEA13526-8607-4659-8D6F-CD338D50C372} = {77D144AB-E255-4B15-9039-30A57233E719}
 		{0EC3B22C-1242-4309-AD2E-FE3015FBAE68} = {FCEE348C-AD6F-4B1A-922C-FEB14AAF421E}
 		{9E984AF6-F345-48D1-837F-4CF649E24796} = {9FB3DC41-97CD-48AE-9377-7999E7637A96}
-		{5748484F-8F88-4F89-8ACB-BDF35CA883D5} = {22CD9997-074C-4FA0-A912-8865720D5697}
+		{214BE11F-D9C9-4711-97FD-2A50058B37EB} = {22CD9997-074C-4FA0-A912-8865720D5697}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {08447AF2-8D82-475C-A168-348A55EEC62B}
