@@ -12,6 +12,11 @@ namespace Clinica.DDD.Domain.Services
     {
         private readonly IRepositoryBase<TEntity> _repository;
 
+        public ServiceBase(IRepositoryBase<TEntity> repository)
+        {
+            _repository = repository;
+        }
+
         public async Task Adicionar(TEntity entity)
         {
             await _repository.Adicionar(entity);

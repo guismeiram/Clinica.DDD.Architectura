@@ -27,10 +27,7 @@ namespace Clinica.DDD.Infra.Repositories
             return await DbSet.AsNoTracking().Where(predicate).ToListAsync();
         }
 
-        public virtual async Task<TEntity> ObterPorId(string id)
-        {
-            return await DbSet.FindAsync(id);
-        }
+        public virtual async Task<TEntity> ObterPorId(string id) => await DbSet.FindAsync(id);
 
         public virtual async Task<List<TEntity>> ObterTodos()
         {
