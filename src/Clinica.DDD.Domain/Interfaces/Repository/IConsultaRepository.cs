@@ -9,7 +9,7 @@ namespace Clinica.DDD.Domain.Interfaces.Repository
 {
     public interface IConsultaRepository : IRepositoryBase<Consulta>
     {
-        IEnumerable<Consulta> BuscarPorNome(string nome);
-
+        Task<IEnumerable<Consulta>> obterConsultaClinicaPaciente();
+        Task<Consulta> obterConsultaMedica(String id);
     }
 }

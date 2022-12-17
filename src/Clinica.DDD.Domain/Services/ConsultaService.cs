@@ -17,10 +17,22 @@ namespace Clinica.DDD.Domain.Services
             _consultaRepository = consultaRepository;
         }
 
-        public IEnumerable<Consulta> ObterConsultasMedicas(IEnumerable<Consulta> consulta)
+        public async Task<IEnumerable<Consulta>> obterConsultaClinicaPaciente()
         {
-            throw new NotImplementedException();
+            return await _consultaRepository.obterConsultaClinicaPaciente();
         }
+
+        public Task<Consulta> obterConsultaMedica(string id)
+        {
+            return _consultaRepository.obterConsultaMedica(id);
+        }
+
+
+
+        /* public bool ClienteEspecial(Cliente cliente)
+         {
+             return cliente.Ativo && DateTime.Now.Year - cliente.DataCadastro.Year >= 5;
+         }*/
     }
 }
 
