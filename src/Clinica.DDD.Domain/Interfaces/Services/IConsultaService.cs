@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace Clinica.DDD.Domain.Interfaces.Services
 {
-    public interface IConsultaService : IServiceBase<Consulta>
+    public interface IConsultaService 
     {
-        Task<IEnumerable<Consulta>> obterConsultaClinicaPaciente();
-        Task<Consulta> obterConsultaMedica(String id);
+     
     }
 }

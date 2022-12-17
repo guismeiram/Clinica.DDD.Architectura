@@ -9,24 +9,9 @@ using System.Threading.Tasks;
 
 namespace Clinica.DDD.Domain.Services
 {
-    public class ConsultaService : ServiceBase<Consulta>, IConsultaService
+    public class ConsultaService
     {
-        public readonly IConsultaRepository _consultaRepository;
-        public ConsultaService(IConsultaRepository consultaRepository) : base(consultaRepository)
-        {
-            _consultaRepository = consultaRepository;
-        }
-
-        public async Task<IEnumerable<Consulta>> obterConsultaClinicaPaciente()
-        {
-            return await _consultaRepository.obterConsultaClinicaPaciente();
-        }
-
-        public Task<Consulta> obterConsultaMedica(string id)
-        {
-            return _consultaRepository.obterConsultaMedica(id);
-        }
-
+       
 
 
         /* public bool ClienteEspecial(Cliente cliente)

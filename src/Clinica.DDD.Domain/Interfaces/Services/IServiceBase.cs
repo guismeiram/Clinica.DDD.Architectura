@@ -8,14 +8,8 @@ using System.Threading.Tasks;
 
 namespace Clinica.DDD.Domain.Interfaces.Services
 {
-    public interface IServiceBase<TEntity> : IDisposable where TEntity : Entity
+    public interface IServiceBase
     {
-        Task Adicionar(TEntity entity);
-        Task<List<TEntity>> ObterTodos();
-        Task<TEntity> ObterPorId(string id);
-        Task Atualizar(TEntity entity);
-        Task Remover(String id);
-        Task<IEnumerable<TEntity>> Buscar(Expression<Func<TEntity, bool>> predicate);
-        Task<int> SaveChanges();
+
     }
 }

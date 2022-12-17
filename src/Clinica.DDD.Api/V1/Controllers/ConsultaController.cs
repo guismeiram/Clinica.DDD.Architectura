@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
-using Clinica.DDD.Application.Interface;
 using Clinica.DDD.Api.ViewModel;
 using Clinica.DDD.Domain.Interfaces.Repository;
 using AutoMapper;
@@ -12,16 +11,14 @@ namespace Clinica.DDD.Api.V1.Controllers
     [ApiController]
     public class ConsultaController : ControllerBase
     {
-        private readonly IAppConsultaService _consultaApp;
         private readonly IMapper _mapper;
 
-        public ConsultaController(IAppConsultaService consultaApp, IMapper mapper)
+        public ConsultaController( IMapper mapper)
         {
-            _consultaApp = consultaApp;
             _mapper = mapper;
         }
 
-        [HttpGet]
+       /* [HttpGet]
         public async Task<IEnumerable<ConsultaViewModel>> ObterTodos()
         {
             return _mapper.Map<IEnumerable<Consulta>, IEnumerable<ConsultaViewModel>>(await _consultaApp.obterConsultaClinicaPaciente());
@@ -29,5 +26,15 @@ namespace Clinica.DDD.Api.V1.Controllers
             // return _mapper.Map<IEnumerable<ConsultaViewModel>>(await _consultaRepository.obterConsultaClinicaPaciente());
         }
         //get
+
+        [HttpPost]
+        public async Task<ActionResult<ConsultaViewModel>> Adicionar(ConsultaViewModel consultaViewModel)
+        {
+            if (!ModelState.IsValid) return CustomResponse(ModelState);
+
+            await _consultaService.Adicionar(_mapper.Map<Consulta>(consultaViewModel));
+
+            return CustomResponse(consultaViewModel);
+        }*/
     }
 }
