@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Clinica.DDD.Api.ViewModel
+namespace Clinica.DDD.Application.ViewModel
 {
     public class ConsultaViewModel
     {
@@ -9,8 +9,8 @@ namespace Clinica.DDD.Api.ViewModel
         public string? MedicoId { get; set; }
         public DateTime Data { get; set; }
         public string? Nome { get; set; }
-        // relacionamentos
         public MedicoViewModel? Medicos { get; set; }
+        // relacionamentos
 
     }
 }

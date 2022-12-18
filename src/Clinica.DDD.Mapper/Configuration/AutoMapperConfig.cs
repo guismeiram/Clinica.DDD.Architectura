@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Clinica.DDD.Api.ViewModel;
+using Clinica.DDD.Application.ViewModel;
 using Clinica.DDD.Domain.Entities;
 using System;
 using System.Collections.Generic;

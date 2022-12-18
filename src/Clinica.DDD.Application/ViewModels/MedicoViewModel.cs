@@ -1,11 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Clinica.DDD.Api.ViewModel
+namespace Clinica.DDD.Application.ViewModel
 {
     public class MedicoViewModel
     {
-        //ids
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string? Id { get; set; }
 
         //autommaper
@@ -19,7 +17,5 @@ namespace Clinica.DDD.Api.ViewModel
         public string? Ddd { get; set; }
 
 
-        // relacionamentos
-        public IEnumerable<ConsultaViewModel>? Consultas { get; set; }
     }
 }

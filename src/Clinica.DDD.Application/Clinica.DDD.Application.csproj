@@ -11,10 +11,10 @@
     <ProjectReference Include="..\Clinica.DDD.Domain\Clinica.DDD.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Handlers\" />
-    <Folder Include="Commands\" />
-    <Folder Include="Validations\" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="FluentValidation" Version="9.4.0" />
+		<PackageReference Include="MediatR" Version="9.0.0" />
+		<PackageReference Include="System.Text.Json" Version="5.0.1" />
+	</ItemGroup>
 
 </Project>

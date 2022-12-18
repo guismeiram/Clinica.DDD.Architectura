@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
-using Clinica.DDD.Api.ViewModel;
 using Clinica.DDD.Domain.Interfaces.Repository;
 using AutoMapper;
 using Clinica.DDD.Domain.Entities;
