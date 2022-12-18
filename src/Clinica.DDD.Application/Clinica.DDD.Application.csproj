@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Commands\qvix1tih.de4~" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Clinica.DDD.Core\Clinica.DDD.Core.csproj" />
     <ProjectReference Include="..\Clinica.DDD.Domain\Clinica.DDD.Domain.csproj" />
   </ItemGroup>

@@ -7,12 +7,19 @@ namespace Clinica.DDD.Application.Validations
     /// <summary>
     /// Validações ao adicionar o cliente
     /// </summary>
-    public class AdicionaConsultaValidation : Validation<AdicionaConsultaCommand>
+    public class AdicionaConsultaValidation :Validation<AdicionaConsultaCommand> 
     {
         public AdicionaConsultaValidation()
         {
             ValidarId();
-
+            ValidarNome();
+            ValidarMedicoNomeClinica();
+            ValidarMedicoCrm();
+            ValidarData();
+            ValidarDatacadastro();
+            ValidarMedicoNome();
+            ValidarMedicoDdd();
+            ValidarDatacadastro();
         }
         /*
         public string? MedicoId { get; set; }

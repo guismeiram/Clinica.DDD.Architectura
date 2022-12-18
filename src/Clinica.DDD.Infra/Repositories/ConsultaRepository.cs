@@ -1,4 +1,5 @@
-﻿using Clinica.DDD.Domain.Entities;
+﻿using Clinica.DDD.Core.DomainObjects;
+using Clinica.DDD.Domain.Entities;
 using Clinica.DDD.Domain.Interfaces.Repository;
 using Clinica.DDD.Infra.Context;
 using Microsoft.EntityFrameworkCore;
@@ -10,25 +11,31 @@ using System.Threading.Tasks;
 
 namespace Clinica.DDD.Infra.Repositories
 {
-    internal class ConsultaRepository : RepositoryBase<Consulta>, IConsultaRepository
+    public class ConsultaRepository : IConsultaRepository
     {
-        protected ConsultaRepository(ClinicaDbContext db) : base(db)
-        {
-        }
+        private readonly ClinicaDbContext _context;
 
-        
-
-        public async Task<Consulta> obterConsultaMedica(string id)
+        public ConsultaRepository(ClinicaDbContext context)
         {
-            return await Db.Consulta.AsNoTracking()
-                .Include(c => c.Medicos)
-                .FirstOrDefaultAsync(c => c.Id == id);
+            _context = context;
         }
+        public void Add(Consulta consulta) => _context.Add(consulta);
 
-        public async Task<IEnumerable<Consulta>> obterConsultaClinicaPaciente()
-        {
-            return await Db.Consulta.AsNoTracking().Include(f => f.Medicos)
-                .OrderBy(p => p.Nome).ToListAsync();
-        }
+
+        public void Delete(Consulta consulta) => _context.Remove(consulta);
+
+        public async Task<IEnumerable<Consulta>> GetAll() => await _context.Consulta
+                             .Include(i => i.Medicos)
+                             .OrderBy(o => o.Nome)
+                             .AsNoTracking()
+                             .ToListAsync();
+
+        public async Task<Consulta> GetById(int id)
+              => await _context.Consulta
+                             .Include(i => i.Medicos)
+                             .AsNoTracking()
+                             .FirstOrDefaultAsync(f => f.Id == id);
+        public void Update(Consulta entity)
+                        => _context.Update(entity);
     }
 }

@@ -9,7 +9,7 @@ namespace Clinica.DDD.Domain.Entities
 {
     public class Consulta : Entity
     {
-        public string? MedicoId { get; set; }
+        public int MedicoId { get; set; }
         public DateTime Data { get; set; }
         public string? Nome { get; set; }
         // relacionamentos

@@ -8,11 +8,14 @@ namespace Clinica.DDD.Core.DomainObjects
 {
     public abstract class Entity
     {
-        protected Entity()
-        {
-            Id = Guid.NewGuid().ToString();
-        }
+        public DateTime DataCadastro { get; private set; }
+        public int Id { get; private set; }
 
-        public string Id { get; set; }
+        protected Entity() { }
+        public Entity(int id)
+        {
+            Id = id;
+            DataCadastro = DateTime.Now.Date;
+        }
     }
 }

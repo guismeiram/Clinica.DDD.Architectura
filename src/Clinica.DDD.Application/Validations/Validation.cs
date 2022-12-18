@@ -13,8 +13,7 @@ namespace Clinica.DDD.Application.Validations
     {
         protected void ValidarId()
         {
-            RuleFor(r => r.Id)
-                .GreaterThanOrEqualTo(0)
+            RuleFor(r => r.Id).GreaterThanOrEqualTo(0)
                 .WithMessage("Identificador inválido.");
         }
     }
