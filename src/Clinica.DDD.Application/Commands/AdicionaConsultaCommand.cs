@@ -9,15 +9,15 @@ namespace Clinica.DDD.Application.Commands
     /// </summary>
     public class AdicionaConsultaCommand : Command
     {
-        public string? Id { get; set; }
-        public string? MedicoId { get; set; }
+        public int Id { get; set; }
+        public int MedicoId { get; set; }
         public DateTime Data { get; set; }
-        public string? Nome { get; set; }
-        public MedicoViewModel? Medicos { get; set; }
+        public string Nome { get; set; }
+        public MedicoViewModel Medicos { get; set; }
 
         public AdicionaConsultaCommand()
         {
-            Id = new Random().Next().ToString();
+            Id = new Random().Next();
         }
 
         public override bool EhValido()

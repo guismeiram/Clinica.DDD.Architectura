@@ -15,7 +15,7 @@ namespace Clinica.DDD.Domain.Entities
 
 
 
-        public string? Crm { get; set; }
+        public int? Crm { get; set; }
         public int? Idade { get; set; }
         public string? Telefone { get; set; }
         public string? Ddd { get; set; }
@@ -25,6 +25,18 @@ namespace Clinica.DDD.Domain.Entities
 
         public IEnumerable<Consulta>? Consultas { get; set; }
 
+        protected Medico() { }
 
+        public Medico(int id, string? nome, string? nomeClinica, int? crm,
+            int? idade, string? telefone, string? ddd) : base(id)
+        {
+            
+            Nome = nome;
+            NomeClinica = nomeClinica;
+            Crm = crm;
+            Idade = idade;
+            Telefone = telefone;
+            Ddd = ddd;
+        }
     }
 }
