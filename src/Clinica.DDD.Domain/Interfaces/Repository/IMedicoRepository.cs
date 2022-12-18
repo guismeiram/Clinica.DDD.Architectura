@@ -17,7 +17,7 @@ namespace Clinica.DDD.Domain.Interfaces.Repository
 
         Task<IEnumerable<Medico>> GetAll();
 
-        Task<Consulta> GetById(int id);
+        Task<Medico> GetById(int id);
 
         void Update(Medico medico);
     }

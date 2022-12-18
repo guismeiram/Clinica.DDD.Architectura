@@ -10,10 +10,18 @@ namespace Clinica.DDD.Application.Commands
     public class AdicionaMedicoCommand : Command
     {
         public int Id { get; set; }
-        public int MedicoId { get; set; }
-        public DateTime Data { get; set; }
+
+        //autommaper
         public string Nome { get; set; }
-        public MedicoViewModel Medicos { get; set; }
+        public string NomeClinica { get; set; }
+
+
+        public int Crm { get; set; }
+        public int Idade { get; set; }
+        public string Telefone { get; set; }
+        public string Ddd { get; set; }
+
+        public IEnumerable<ConsultaViewModel> Consulta { get; set; }
 
         public AdicionaMedicoCommand()
         {

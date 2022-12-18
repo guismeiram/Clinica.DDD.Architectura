@@ -10,9 +10,19 @@ namespace Clinica.DDD.Application.Commands
 {
     public class AtualizaMedicoCommand : Command
     {
-        public MedicoViewModel MedicoViewModel { get; set; }
-        public DateTime Data { get; set; }
-        public string? Nome { get; set; }
+       
+
+        //autommaper
+        public string Nome { get; set; }
+        public string NomeClinica { get; set; }
+
+
+        public int Crm { get; set; }
+        public int Idade { get; set; }
+        public string Telefone { get; set; }
+        public string Ddd { get; set; }
+
+        public IEnumerable<ConsultaViewModel> Consulta { get; set; }
 
         public AtualizaMedicoCommand()
         { }

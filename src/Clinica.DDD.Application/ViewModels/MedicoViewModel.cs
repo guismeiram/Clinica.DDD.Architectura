@@ -16,6 +16,6 @@ namespace Clinica.DDD.Application.ViewModel
         public string Telefone { get; set; }
         public string Ddd { get; set; }
 
-
+        public IEnumerable<ConsultaViewModel > Consulta { get; set; }
     }
 }

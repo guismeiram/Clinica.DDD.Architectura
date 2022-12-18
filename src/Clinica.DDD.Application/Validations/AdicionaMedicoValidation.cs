@@ -1,4 +1,5 @@
 ﻿using Clinica.DDD.Application.Commands;
+using Clinica.DDD.Domain.Entities;
 using FluentValidation;
 using System;
 
@@ -13,13 +14,13 @@ namespace Clinica.DDD.Application.Validations
         {
             ValidarId();
             ValidarNome();
-            ValidarMedicoNomeClinica();
-            ValidarMedicoCrm();
-            ValidarData();
-            ValidarDatacadastro();
-            ValidarMedicoNome();
-            ValidarMedicoDdd();
-            ValidarDatacadastro();
+            ValidarConsultaDatacadastro();
+            ValidarConsultaNome();
+            ValidarCrm();
+            ValidarIdade();
+            ValidarNomeClinica();
+            ValidarTelefone();
+            
         }
         /*
         public string? MedicoId { get; set; }
@@ -28,11 +29,11 @@ namespace Clinica.DDD.Application.Validations
         // relacionamentos
         public Medico? Medicos { get; set; }         
         */
-        protected void ValidarData()
+        protected void ValidarNomeClinica()
         {
-            RuleFor(r => r.Data)
-              .InclusiveBetween(DateTime.MinValue, DateTime.MaxValue)
-              .WithMessage("Data da consulta");
+            RuleFor(r => r.NomeClinica)
+                .NotEmpty().WithMessage("Nome clinica é obrigatório.")
+                .Length(2, 200).WithMessage("Nome deve conter no mímimo 2 letras e no máximo 200.");
         }
 
         protected void ValidarNome()
@@ -42,35 +43,36 @@ namespace Clinica.DDD.Application.Validations
                 .Length(2, 200).WithMessage("Nome deve conter no mímimo 2 letras e no máximo 200.");
         }
 
-        protected void ValidarMedicoCrm()
+        protected void Validar()
         {
-            RuleFor(f => f.Medicos.Crm).NotEmpty().WithMessage("CRM obrigatorio");
+            RuleFor(f => f.Telefone)
+                .NotEmpty().WithMessage("Telefone é obrigatório.")
+                .Length(2, 200).WithMessage("Nome deve conter no mímimo 2 letras e no máximo 200.");
         }
 
-        protected void ValidarMedicoDdd()
+        protected void ValidarIdade()
         {
-            RuleFor(f => f.Medicos.Ddd).NotEmpty().WithMessage("DDD obrigatorio");
+            RuleFor(f => f.Idade).NotEmpty().WithMessage("Idade obrigatoria");
         }
 
-        protected void ValidarMedicoIdade()
+        protected void ValidarCrm()
         {
-            RuleFor(f => f.Medicos.Idade).NotEmpty().WithMessage("Idade obrigatoria");
+            RuleFor(f => f.Crm).NotEmpty().WithMessage("Idade obrigatoria");
         }
 
-        protected void ValidarMedicoNomeClinica()
+        protected void ValidarTelefone()
         {
-            RuleFor(f => f.Medicos.NomeClinica).NotEmpty().WithMessage("Nome da Clinica obrigatorio");
+            RuleFor(f => f.Telefone).NotEmpty().WithMessage("Telefone obrigatorio");
         }
 
-        protected void ValidarMedicoNome()
+        protected void ValidarConsultaNome()
         {
-            RuleFor(f => f.Medicos.Nome).NotEmpty().WithMessage("Nome do Medico Obrigatorio");
+            RuleFor(f => f.Consulta.Select(f => f.Nome)).ForEach(p => p.Length(2, 200)).NotEmpty().WithMessage("Nome deve conter no mímimo 2 letras e no máximo 200.");
         }
 
-        protected void ValidarDatacadastro()
+        protected void ValidarConsultaDatacadastro()
         {
-            RuleFor(f => f.DataCadastro).InclusiveBetween(DateTime.MinValue, DateTime.Now.Date)
-              .WithMessage("Data de nascimento é inválida.");
+            RuleFor(f => f.Consulta.Select(f => f.Data)).ForEach(p => p.InclusiveBetween(DateTime.MinValue, DateTime.Now.Date)).WithMessage("Data de nascimento é inválida.");
         }
     }
 }
