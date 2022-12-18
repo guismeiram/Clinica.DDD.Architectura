@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -9,6 +9,12 @@
   <ItemGroup>
     <ProjectReference Include="..\Clinica.DDD.Core\Clinica.DDD.Core.csproj" />
     <ProjectReference Include="..\Clinica.DDD.Domain\Clinica.DDD.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Handlers\" />
+    <Folder Include="Commands\" />
+    <Folder Include="Validations\" />
   </ItemGroup>
 
 </Project>
