@@ -22,15 +22,6 @@ namespace Clinica.DDD.Domain.Entities
             Data = data;
             Nome = nome;
         }
-        public void AtribuirConsulta(Medico medico) => Medicos = medico;
-
-
-        public void AtualizarInformacoes(Consulta consulta)
-        {
-            MedicoId = consulta.MedicoId;
-            Data = consulta.Data;
-            Nome = consulta.Nome;
-            AtribuirConsulta(consulta.Medicos);
-        }
+ 
     }
 }

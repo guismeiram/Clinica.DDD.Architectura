@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 
 namespace Clinica.DDD.Application.Commands
 {
-    public class AtualizaConsultaCommand : Command
+    public class AtualizaMedicoCommand : Command
     {
         public MedicoViewModel MedicoViewModel { get; set; }
         public DateTime Data { get; set; }
         public string? Nome { get; set; }
 
-        public AtualizaConsultaCommand()
+        public AtualizaMedicoCommand()
         { }
 
         public override bool EhValido()
         {
-            ValidationResult = new AtualizaConsultaValidation().Validate(this);
+            ValidationResult = new AtualizaMedicoValidation().Validate(this);
             return ValidationResult.IsValid;
         }
     }

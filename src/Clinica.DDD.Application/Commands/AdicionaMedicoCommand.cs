@@ -7,7 +7,7 @@ namespace Clinica.DDD.Application.Commands
     /// <summary>
     /// Comando para adicionar um cliente
     /// </summary>
-    public class AdicionaConsultaCommand : Command
+    public class AdicionaMedicoCommand : Command
     {
         public int Id { get; set; }
         public int MedicoId { get; set; }
@@ -15,14 +15,14 @@ namespace Clinica.DDD.Application.Commands
         public string Nome { get; set; }
         public MedicoViewModel Medicos { get; set; }
 
-        public AdicionaConsultaCommand()
+        public AdicionaMedicoCommand()
         {
             Id = new Random().Next();
         }
 
         public override bool EhValido()
         {
-            ValidationResult = new AdicionaConsultaValidation().Validate(this);
+            ValidationResult = new AdicionaMedicoValidation().Validate(this);
             return ValidationResult.IsValid;
         }
     }

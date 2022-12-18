@@ -14,14 +14,14 @@ namespace SevenTech.Application.Handlers
     /// <summary>
     /// Manipulador do comando de adicionar cliente
     /// </summary>
-    public class AdicionaConsultaHandler : CommandHandler, IRequestHandler<AdicionaConsultaCommand, ValidationResult>
+    public class AdicionaMedicoHandler : CommandHandler, IRequestHandler<AdicionaMedicoCommand, ValidationResult>
     {
-        private readonly IConsultaRepository _consultaRepository;
+        private readonly IMedicoRepository _medicoRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public AdicionaConsultaHandler(IConsultaRepository consultaRepository, IUnitOfWork unitOfWork)
+        public AdicionaMedicoHandler(IMedicoRepository medicoRepository, IUnitOfWork unitOfWork)
         {
-            _consultaRepository = consultaRepository;
+            _medicoRepository = medicoRepository;
             _unitOfWork = unitOfWork;
         }
 
@@ -30,10 +30,10 @@ namespace SevenTech.Application.Handlers
         /// </summary>
         /// <param name="request">requisição contendo os dados do cliente</param>
         /// <returns></returns>
-        private Consulta CriarCliente(AdicionaConsultaCommand request)
+        private Consulta CriarCliente(AdicionaMedicoCommand request)
         {
-            var consulta = new Consulta(request.Id, request.MedicoId, request.Data, request.Nome);
-            consulta.AtribuirConsulta(new Medico(
+            var consulta = new Medico(request.Id, request.MedicoId, request.Data, request.Nome);
+            consulta.AtribuirConsulta(new (new Random().Next(),
                 request.Id,
                 request.Medicos?.Nome,
                 request.Medicos?.NomeClinica,
@@ -42,12 +42,10 @@ namespace SevenTech.Application.Handlers
                 request.Medicos?.Telefone,
                 request.Medicos?.Ddd));
 
-                
-
             return consulta;
         }
 
-        public async Task<ValidationResult> Handle(AdicionaConsultaCommand request, CancellationToken cancellationToken)
+        public async Task<ValidationResult> Handle(AdicionaMedicoCommand request, CancellationToken cancellationToken)
         {
             if (!request.EhValido())
                 return request.ValidationResult;

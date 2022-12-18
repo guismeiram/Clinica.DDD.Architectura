@@ -7,9 +7,9 @@ namespace Clinica.DDD.Application.Validations
     /// <summary>
     /// Validações ao adicionar o cliente
     /// </summary>
-    public class AdicionaConsultaValidation :Validation<AdicionaConsultaCommand> 
+    public class AdicionaMedicoValidation :Validation<AdicionaMedicoCommand> 
     {
-        public AdicionaConsultaValidation()
+        public AdicionaMedicoValidation()
         {
             ValidarId();
             ValidarNome();

@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 
 namespace Clinica.DDD.Domain.Interfaces.Repository
 {
-    public interface IConsultaRepository
+    public interface IMedicoRepository
     {
-        void Add(Consulta consulta);
+        void Add(Medico medico);
 
-        void Delete(Consulta consulta);
+        void Delete(Medico medico);
 
-        Task<IEnumerable<Consulta>> GetAll();
+        Task<IEnumerable<Medico>> GetAll();
 
         Task<Consulta> GetById(int id);
 
-        void Update(Consulta consulta);
+        void Update(Medico medico);
     }
 }

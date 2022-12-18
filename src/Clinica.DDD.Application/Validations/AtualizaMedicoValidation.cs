@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Clinica.DDD.Application.Validations
 {
-    public class AtualizaConsultaValidation : Validation<AtualizaConsultaCommand>
+    public class AtualizaMedicoValidation : Validation<AtualizaMedicoCommand>
     {
         
-            public AtualizaConsultaValidation()
+            public AtualizaMedicoValidation()
             {
                 ValidarId();
                 ValidarNome();

@@ -23,7 +23,7 @@ namespace Clinica.DDD.Domain.Entities
 
         // relacionamentos
 
-        public IEnumerable<Consulta>? Consultas { get; set; }
+        public IEnumerable<Consulta> Consultas { get; set; }
 
         protected Medico() { }
 
@@ -37,6 +37,19 @@ namespace Clinica.DDD.Domain.Entities
             Idade = idade;
             Telefone = telefone;
             Ddd = ddd;
+        }
+
+        public void AtribuirMedico(IEnumerable<Consulta> consulta) => Consultas = consulta;
+
+
+        public void AtualizarInformacoes(Medico medico)
+        {
+            Nome = medico.Nome;
+            NomeClinica = medico.NomeClinica;
+            Crm = medico.Crm;
+            Idade = medico.Idade;
+            Telefone = medico.Telefone;
+            Ddd = medico.Ddd;
         }
     }
 }

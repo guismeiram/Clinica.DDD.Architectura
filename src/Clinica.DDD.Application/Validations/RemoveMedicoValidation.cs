@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Clinica.DDD.Application.Validations
 {
-    public class RemoveConsultaValidation : Validation<RemoveConsultaCommand>
+    public class RemoveMedicoValidation : Validation<RemoveMedicoCommand>
     {
-        public RemoveConsultaValidation()
+        public RemoveMedicoValidation()
         {
             ValidarId();
         }

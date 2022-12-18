@@ -3,15 +3,15 @@ using FluentValidation;
 
 namespace Clinica.DDD.Application.Commands
 {
-    public class RemoveConsultaCommand : Command
+    public class RemoveMedicoCommand : Command
     {
-        public RemoveConsultaCommand(int id)
+        public RemoveMedicoCommand(int id)
         {
             Id = id;
         }
         public override bool EhValido()
         {
-            ValidationResult = new RemoveConsultaValidation().Validate(this);
+            ValidationResult = new RemoveMedicoValidation().Validate(this);
             return ValidationResult.IsValid;
         }
     }
